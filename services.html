@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete lawn care and landscaping services including weekly maintenance, aeration, cleanups, powerwashing, snow removal, and Christmas lights in Suffolk County, NY.">
+    <meta name="keywords" content="lawn care, landscaping, Suffolk County, Long Island, Smithtown, Huntington, snow removal, powerwashing">
+    <title>Our Services | Above & Beyond Landscaping</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'forest-green': '#2d5016',
+                        'earth-green': '#4a7729',
+                        'sage-green': '#7fa855',
+                        'navy-blue': '#1e3a5f',
+                        'crimson-red': '#c41e3a',
+                        'off-white': '#f8f7f4',
+                        'charcoal': '#2c2c2c',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Above & Beyond",
+        "image": "assets/images/logo.jpg",
+        "description": "Professional lawn care and landscaping services in Suffolk County, Long Island",
+        "telephone": "631-484-3915",
+        "email": "info@aboveandbeyondny.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Suffolk County",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "40.8679",
+            "longitude": "-73.1301"
+        },
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "40.8679",
+                "longitude": "-73.1301"
+            },
+            "geoRadius": "25000"
+        },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-16:00"
+    }
+    </script>
+</head>
+<body class="bg-white text-charcoal font-sans">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-charcoal p-2 z-[100] rounded">
+        Skip to main content
+    </a>
+
+    <!-- Navigation Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <img src="assets/images/logo.jpg" alt="Above & Beyond Logo" class="h-16 md:h-20 logo-image">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-charcoal hover:text-forest-green font-medium transition">Home</a>
+                    <a href="services.html" class="text-forest-green font-bold transition" aria-current="page">Services</a>
+                    <a href="about.html" class="text-charcoal hover:text-forest-green font-medium transition">About</a>
+                    <a href="gallery.html" class="text-charcoal hover:text-forest-green font-medium transition">Gallery</a>
+                    <a href="contact.html" class="text-charcoal hover:text-forest-green font-medium transition">Contact</a>
+                    <a href="tel:6314843915" class="bg-crimson-red text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700 transition btn-primary">
+                        📞 631-484-3915
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button
+                    id="mobile-menu-button"
+                    class="md:hidden text-charcoal focus:outline-none"
+                    aria-label="Toggle mobile menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3" role="navigation" aria-label="Mobile navigation">
+                <a href="index.html" class="block text-charcoal hover:text-forest-green font-medium py-2">Home</a>
+                <a href="services.html" class="block text-forest-green font-bold py-2" aria-current="page">Services</a>
+                <a href="about.html" class="block text-charcoal hover:text-forest-green font-medium py-2">About</a>
+                <a href="gallery.html" class="block text-charcoal hover:text-forest-green font-medium py-2">Gallery</a>
+                <a href="contact.html" class="block text-charcoal hover:text-forest-green font-medium py-2">Contact</a>
+                <a href="tel:6314843915" class="block bg-crimson-red text-white px-6 py-3 rounded-lg font-bold text-center">
+                    📞 631-484-3915
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+    <!-- Services Page Hero -->
+    <section class="bg-forest-green text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4">Our Services</h1>
+            <p class="text-xl max-w-2xl mx-auto">
+                Comprehensive lawn care and property maintenance solutions for Suffolk County, Long Island
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Detail Container -->
+    <div class="container mx-auto px-4 py-16">
+
+        <!-- Service 1: Weekly Lawn Maintenance -->
+        <section id="lawn-maintenance" class="mb-16 scroll-mt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <span class="text-5xl mr-4">🏡</span>
+                        <h2 class="text-3xl font-bold text-charcoal">Weekly Lawn Maintenance</h2>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-lg">
+                        Keep your lawn looking pristine all season long with our professional weekly maintenance service.
+                        We provide consistent, reliable care that ensures your property always makes a great first impression.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Professional mowing with precision edging</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>String trimming around obstacles and borders</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Debris removal and cleanup</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Seasonal height adjustments for optimal grass health</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="bg-crimson-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition btn-primary inline-block">
+                        Request Quote
+                    </a>
+                </div>
+                <div class="order-first lg:order-last">
+                    <img src="assets/images/lawn-maintenance.jpg" alt="Professional lawn maintenance service" class="rounded-lg shadow-lg w-full" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 2: Thatch, Aerate, Seed & Fertilize -->
+        <section id="aeration" class="mb-16 scroll-mt-20 bg-off-white rounded-lg p-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="assets/images/aeration.jpg" alt="Lawn aeration and fertilization service" class="rounded-lg shadow-lg w-full" loading="lazy">
+                </div>
+                <div>
+                    <div class="flex items-center mb-4">
+                        <span class="text-5xl mr-4">🌱</span>
+                        <h2 class="text-3xl font-bold text-charcoal">Thatch, Aerate, Seed & Fertilize</h2>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-lg">
+                        Restore and enhance your lawn's health with our comprehensive treatment programs.
+                        Specially designed for Long Island's unique soil and climate conditions.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Core aeration to reduce soil compaction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Dethatching to remove excess buildup</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Overseeding with premium grass seed</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Custom fertilization programs for optimal growth</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="bg-crimson-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition btn-primary inline-block">
+                        Request Quote
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 3: Spring/Fall Clean Ups -->
+        <section id="cleanups" class="mb-16 scroll-mt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <span class="text-5xl mr-4">🍂</span>
+                        <h2 class="text-3xl font-bold text-charcoal">Spring/Fall Clean Ups</h2>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-lg">
+                        Prepare your property for the changing seasons with our thorough cleanup services.
+                        We handle all the heavy work so you can enjoy your outdoor space year-round.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Complete leaf removal and disposal</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Debris clearing from lawns and beds</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Garden bed maintenance and mulching</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Gutter cleaning (add-on service)</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="bg-crimson-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition btn-primary inline-block">
+                        Request Quote
+                    </a>
+                </div>
+                <div class="order-first lg:order-last">
+                    <img src="assets/images/cleanup.jpg" alt="Spring and fall cleanup service" class="rounded-lg shadow-lg w-full" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 4: Powerwashing/Softwashing -->
+        <section id="powerwashing" class="mb-16 scroll-mt-20 bg-off-white rounded-lg p-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="assets/images/powerwash.jpg" alt="Powerwashing and softwashing service" class="rounded-lg shadow-lg w-full" loading="lazy">
+                </div>
+                <div>
+                    <div class="flex items-center mb-4">
+                        <span class="text-5xl mr-4">💧</span>
+                        <h2 class="text-3xl font-bold text-charcoal">Powerwashing/Softwashing</h2>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-lg">
+                        Restore your property's curb appeal with professional pressure washing services.
+                        We safely and effectively clean all exterior surfaces.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>House siding and exterior walls</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Driveways, walkways, and patios</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Deck and fence cleaning/restoration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Soft washing for delicate surfaces</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="bg-crimson-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition btn-primary inline-block">
+                        Request Quote
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 5: Snow Removal -->
+        <section id="snow-removal" class="mb-16 scroll-mt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <span class="text-5xl mr-4">❄️</span>
+                        <h2 class="text-3xl font-bold text-charcoal">Snow Removal</h2>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-lg">
+                        Don't let winter weather keep you stuck at home. Our reliable snow removal service
+                        keeps your property safe and accessible throughout the season.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Residential driveway plowing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Walkway and sidewalk clearing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Quick response times during storms</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Salt/ice melt application available</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="bg-crimson-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition btn-primary inline-block">
+                        Request Quote
+                    </a>
+                </div>
+                <div class="order-first lg:order-last">
+                    <img src="assets/images/snow-removal.jpg" alt="Snow removal service" class="rounded-lg shadow-lg w-full" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 6: Christmas Lights -->
+        <section id="christmas-lights" class="mb-16 scroll-mt-20 bg-off-white rounded-lg p-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="assets/images/christmas-lights.jpg" alt="Christmas lights installation service" class="rounded-lg shadow-lg w-full" loading="lazy">
+                </div>
+                <div>
+                    <div class="flex items-center mb-4">
+                        <span class="text-5xl mr-4">🎄</span>
+                        <h2 class="text-3xl font-bold text-charcoal">Christmas Lights Installation</h2>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-lg">
+                        Make your home shine bright this holiday season with professional Christmas light installation.
+                        We handle everything from design to installation to removal.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Custom lighting designs for your home</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Professional installation and setup</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Post-season removal and storage</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-forest-green mr-2">✓</span>
+                            <span>Safe, insured installation practices</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="bg-crimson-red text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition btn-primary inline-block">
+                        Request Quote
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <section class="bg-forest-green text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Contact us today for a free quote on any of our services.
+            </p>
+            <a href="contact.html" class="bg-crimson-red text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-red-700 transition btn-primary inline-block">
+                Get Your Free Quote
+            </a>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Column 1: Logo and Tagline -->
+                <div>
+                    <img src="assets/images/logo.png" alt="Above & Beyond" class="h-16 mb-4">
+                    <p class="text-gray-400">
+                        Professional lawn care and landscaping services in Suffolk County, Long Island.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>📞 <a href="tel:6314843915" class="hover:text-white transition">631-484-3915</a></li>
+                        <li>✉️ <a href="mailto:info@aboveandbeyondny.com" class="hover:text-white transition">info@aboveandbeyondny.com</a></li>
+                        <li>📍 Suffolk County, Long Island, NY</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Above & Beyond. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
