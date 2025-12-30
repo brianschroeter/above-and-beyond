@@ -68,6 +68,10 @@
     </script>
 </head>
 <body class="bg-white text-charcoal font-sans">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-charcoal p-2 z-[100] rounded">
+        Skip to main content
+    </a>
+
     <!-- Navigation Header -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4">
@@ -81,7 +85,7 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-charcoal hover:text-forest-green font-medium transition">Home</a>
+                    <a href="index.html" class="text-forest-green font-bold transition" aria-current="page">Home</a>
                     <a href="services.html" class="text-charcoal hover:text-forest-green font-medium transition">Services</a>
                     <a href="about.html" class="text-charcoal hover:text-forest-green font-medium transition">About</a>
                     <a href="gallery.html" class="text-charcoal hover:text-forest-green font-medium transition">Gallery</a>
@@ -118,8 +122,9 @@
         </nav>
     </header>
 
+    <main id="main-content">
     <!-- Hero Section -->
-    <section class="relative bg-cover bg-center h-screen" style="background-image: url('assets/images/hero-lawn.jpg');">
+    <section class="relative bg-cover bg-center h-screen" style="background-image: url('assets/images/hero-lawn.jpg'); background-color: #2d5016;">
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
         <div class="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
             <div class="max-w-4xl">
@@ -324,6 +329,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <script src="assets/js/main.js"></script>
 </body>
