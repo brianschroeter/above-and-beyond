@@ -109,6 +109,23 @@ body {
     }
 }
 
+/* Request Quote buttons - add spacing on mobile */
+.service-section .btn-accent {
+    margin-top: 1rem;
+}
+
+@media (max-width: 767px) {
+    .service-section {
+        padding-bottom: 2rem;
+    }
+
+    .service-section .btn-accent {
+        margin-top: 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* Fluid Typography */
 h1, .h1 {
     font-family: var(--font-family);
