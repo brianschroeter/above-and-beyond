@@ -1,0 +1,42 @@
+/* Custom styles for Above & Beyond */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Logo image optimization */
+.logo-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hero background overlay */
+.hero-overlay {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+
+/* CTA button hover effects */
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Service card hover effect */
+.service-card {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image lazy loading placeholder */
+img[loading="lazy"] {
+    background: #f0f0f0;
+}
