@@ -30,19 +30,31 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind Config for Custom Colors -->
+    <!-- Tailwind Config for Custom Colors - Fresh & Modern Theme -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
+                        // Fresh & Modern Palette
+                        'primary': '#22c55e',
+                        'primary-dark': '#16a34a',
+                        'secondary': '#0ea5e9',
+                        'accent': '#f97316',
+                        'accent-dark': '#ea580c',
+                        'surface': '#f8fafc',
+                        'charcoal': '#1f2937',
+                        'charcoal-light': '#374151',
+                        // Legacy colors (for backwards compatibility)
                         'forest-green': '#2d5016',
                         'earth-green': '#4a7729',
                         'sage-green': '#7fa855',
                         'navy-blue': '#1e3a5f',
                         'crimson-red': '#c41e3a',
                         'off-white': '#f8f7f4',
-                        'charcoal': '#2c2c2c',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
                     }
                 }
             }
@@ -87,7 +99,7 @@
     }
     </script>
 </head>
-<body class="bg-white text-charcoal font-sans">
+<body class="bg-surface text-charcoal font-sans">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-charcoal p-2 z-[100] rounded">
         Skip to main content
     </a>
@@ -105,13 +117,13 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-charcoal hover:text-forest-green font-medium transition">Home</a>
-                    <a href="services.html" class="text-charcoal hover:text-forest-green font-medium transition">Services</a>
-                    <a href="about.html" class="text-forest-green font-bold transition" aria-current="page">About</a>
-                    <a href="gallery.html" class="text-charcoal hover:text-forest-green font-medium transition">Gallery</a>
-                    <a href="contact.html" class="text-charcoal hover:text-forest-green font-medium transition">Contact</a>
-                    <a href="tel:6314843915" class="bg-crimson-red text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700 transition btn-primary">
-                        📞 631-484-3915
+                    <a href="index.html" class="nav-link text-charcoal hover:text-primary font-medium transition">Home</a>
+                    <a href="services.html" class="nav-link text-charcoal hover:text-primary font-medium transition">Services</a>
+                    <a href="about.html" class="nav-link active text-primary font-bold transition" aria-current="page">About</a>
+                    <a href="gallery.html" class="nav-link text-charcoal hover:text-primary font-medium transition">Gallery</a>
+                    <a href="contact.html" class="nav-link text-charcoal hover:text-primary font-medium transition">Contact</a>
+                    <a href="tel:6314843915" class="btn-accent px-6 py-2 rounded-lg font-bold">
+                        631-484-3915
                     </a>
                 </div>
 
@@ -130,49 +142,68 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3" role="navigation" aria-label="Mobile navigation">
-                <a href="index.html" class="block text-charcoal hover:text-forest-green font-medium py-2">Home</a>
-                <a href="services.html" class="block text-charcoal hover:text-forest-green font-medium py-2">Services</a>
-                <a href="about.html" class="block text-charcoal hover:text-forest-green font-medium py-2">About</a>
-                <a href="gallery.html" class="block text-charcoal hover:text-forest-green font-medium py-2">Gallery</a>
-                <a href="contact.html" class="block text-charcoal hover:text-forest-green font-medium py-2">Contact</a>
-                <a href="tel:6314843915" class="block bg-crimson-red text-white px-6 py-3 rounded-lg font-bold text-center">
-                    📞 631-484-3915
+                <a href="index.html" class="block nav-link text-charcoal hover:text-primary font-medium py-2">Home</a>
+                <a href="services.html" class="block nav-link text-charcoal hover:text-primary font-medium py-2">Services</a>
+                <a href="about.html" class="block nav-link text-primary font-bold py-2">About</a>
+                <a href="gallery.html" class="block nav-link text-charcoal hover:text-primary font-medium py-2">Gallery</a>
+                <a href="contact.html" class="block nav-link text-charcoal hover:text-primary font-medium py-2">Contact</a>
+                <a href="tel:6314843915" class="block btn-accent px-6 py-3 rounded-lg font-bold text-center">
+                    631-484-3915
                 </a>
             </div>
         </nav>
     </header>
 
     <main id="main-content">
-    <!-- About Page Hero -->
-    <section class="bg-navy-blue text-white py-20">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-5xl font-bold mb-4">About Above & Beyond</h1>
-            <p class="text-xl max-w-2xl mx-auto">
+    <!-- About Page Hero with Background Image -->
+    <section class="relative bg-charcoal text-white py-24 md:py-32 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="assets/images/about-team.jpg" alt="" class="w-full h-full object-cover" loading="eager">
+            <div class="absolute inset-0 hero-overlay-dark"></div>
+        </div>
+        <!-- Hero Content -->
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 fade-in-up hero-text-shadow">About Above & Beyond</h1>
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto fade-in-up delay-200 hero-text-shadow">
                 Family-owned landscaping service dedicated to quality and customer satisfaction
             </p>
         </div>
     </section>
 
     <!-- Tyler's Story -->
-    <section class="py-16">
+    <section class="py-16 md:py-20">
         <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-charcoal mb-6">Our Story</h2>
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-4xl font-bold text-charcoal mb-4">Our Story</h2>
+                <div class="divider-gradient divider-gradient-center"></div>
             </div>
 
-            <div class="prose prose-lg mx-auto text-gray-600">
-                <p class="mb-6 text-lg leading-relaxed">
-                    Above & Beyond is a family-owned landscaping and property maintenance business proudly
-                    serving Suffolk County, Long Island. Founded by Tyler Schroeter, we bring a personal
-                    touch and unwavering commitment to quality to every property we service.
-                </p>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <!-- Team Image -->
+                <div class="fade-in-up delay-100">
+                    <div class="img-hover-zoom shadow-xl">
+                        <img src="assets/images/about-team.jpg" alt="Above & Beyond Team" class="w-full rounded-lg" loading="lazy">
+                    </div>
+                </div>
 
-                <p class="mb-6 text-lg leading-relaxed">
-                    What started as a passion for creating beautiful outdoor spaces has grown into a trusted
-                    name in lawn care and landscaping throughout Suffolk County. We understand that your property
-                    is more than just grass and gardens—it's your home, your sanctuary, and a reflection of your pride.
-                </p>
+                <!-- Story Text -->
+                <div class="prose prose-lg text-gray-600 fade-in-up delay-200">
+                    <p class="mb-6 text-lg leading-relaxed">
+                        Above & Beyond is a family-owned landscaping and property maintenance business proudly
+                        serving Suffolk County, Long Island. Founded by Tyler Schroeter, we bring a personal
+                        touch and unwavering commitment to quality to every property we service.
+                    </p>
 
+                    <p class="mb-6 text-lg leading-relaxed">
+                        What started as a passion for creating beautiful outdoor spaces has grown into a trusted
+                        name in lawn care and landscaping throughout Suffolk County. We understand that your property
+                        is more than just grass and gardens - it's your home, your sanctuary, and a reflection of your pride.
+                    </p>
+                </div>
+            </div>
+
+            <div class="prose prose-lg mx-auto text-gray-600 mt-10 fade-in-up delay-300">
                 <p class="mb-6 text-lg leading-relaxed">
                     As a local, family-owned business, we're invested in our community. We know Long Island properties,
                     we understand the unique challenges of our climate and soil, and we're committed to delivering
@@ -189,32 +220,35 @@
     </section>
 
     <!-- Why Choose Above & Beyond -->
-    <section class="py-16 bg-off-white">
+    <section class="py-16 md:py-20 section-gradient">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-charcoal text-center mb-12">Why Choose Above & Beyond?</h2>
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-4xl font-bold text-charcoal mb-4">Why Choose Above & Beyond?</h2>
+                <div class="divider-gradient divider-gradient-center"></div>
+            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Value 1 -->
-                <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="glass-card p-8 scale-in delay-100">
                     <div class="flex items-center mb-4">
-                        <div class="bg-forest-green text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 text-xl">
-                            👨‍👩‍👧‍👦
+                        <div class="bg-gradient-primary text-white w-14 h-14 rounded-xl flex items-center justify-center mr-4 text-2xl shadow-lg">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-charcoal">Family-Owned & Operated</h3>
+                        <h3 class="text-xl font-bold text-charcoal">Family-Owned & Operated</h3>
                     </div>
                     <p class="text-gray-600">
                         When you work with us, you're working directly with a local family who cares about your
-                        satisfaction. No corporate bureaucracy—just honest, personalized service.
+                        satisfaction. No corporate bureaucracy - just honest, personalized service.
                     </p>
                 </div>
 
                 <!-- Value 2 -->
-                <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="glass-card p-8 scale-in delay-200">
                     <div class="flex items-center mb-4">
-                        <div class="bg-navy-blue text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 text-xl">
-                            ⭐
+                        <div class="bg-gradient-secondary text-white w-14 h-14 rounded-xl flex items-center justify-center mr-4 text-2xl shadow-lg">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-charcoal">Quality Craftsmanship</h3>
+                        <h3 class="text-xl font-bold text-charcoal">Quality Craftsmanship</h3>
                     </div>
                     <p class="text-gray-600">
                         We take pride in our work and never cut corners. Every lawn we mow, every cleanup we complete,
@@ -223,12 +257,12 @@
                 </div>
 
                 <!-- Value 3 -->
-                <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="glass-card p-8 scale-in delay-300">
                     <div class="flex items-center mb-4">
-                        <div class="bg-crimson-red text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 text-xl">
-                            🤝
+                        <div class="bg-gradient-accent text-white w-14 h-14 rounded-xl flex items-center justify-center mr-4 text-2xl shadow-lg">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-charcoal">Customer Satisfaction</h3>
+                        <h3 class="text-xl font-bold text-charcoal">Customer Satisfaction</h3>
                     </div>
                     <p class="text-gray-600">
                         Your satisfaction is our top priority. We listen to your needs, communicate clearly,
@@ -237,12 +271,12 @@
                 </div>
 
                 <!-- Value 4 -->
-                <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="glass-card p-8 scale-in delay-100">
                     <div class="flex items-center mb-4">
-                        <div class="bg-earth-green text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 text-xl">
-                            📍
+                        <div class="bg-gradient-primary text-white w-14 h-14 rounded-xl flex items-center justify-center mr-4 text-2xl shadow-lg">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-charcoal">Local Expertise</h3>
+                        <h3 class="text-xl font-bold text-charcoal">Local Expertise</h3>
                     </div>
                     <p class="text-gray-600">
                         We know Suffolk County. We understand the unique needs of Long Island lawns and properties,
@@ -251,12 +285,12 @@
                 </div>
 
                 <!-- Value 5 -->
-                <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="glass-card p-8 scale-in delay-200">
                     <div class="flex items-center mb-4">
-                        <div class="bg-sage-green text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 text-xl">
-                            ✓
+                        <div class="bg-gradient-secondary text-white w-14 h-14 rounded-xl flex items-center justify-center mr-4 text-2xl shadow-lg">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-charcoal">Reliable Service</h3>
+                        <h3 class="text-xl font-bold text-charcoal">Reliable Service</h3>
                     </div>
                     <p class="text-gray-600">
                         You can count on us to show up on time, complete the job right, and maintain consistent
@@ -265,15 +299,15 @@
                 </div>
 
                 <!-- Value 6 -->
-                <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="glass-card p-8 scale-in delay-300">
                     <div class="flex items-center mb-4">
-                        <div class="bg-forest-green text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 text-xl">
-                            🚀
+                        <div class="bg-gradient-accent text-white w-14 h-14 rounded-xl flex items-center justify-center mr-4 text-2xl shadow-lg">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M13 7.5h5v2h-5zm0 7h5v2h-5zM19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM11 6H6v5h5V6zm-1 4H7V7h3v3zm1 3H6v5h5v-5zm-1 4H7v-3h3v3z"/></svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-charcoal">Above & Beyond</h3>
+                        <h3 class="text-xl font-bold text-charcoal">Above & Beyond</h3>
                     </div>
                     <p class="text-gray-600">
-                        Our name says it all. We don't just meet expectations—we exceed them. Every property,
+                        Our name says it all. We don't just meet expectations - we exceed them. Every property,
                         every service, every time.
                     </p>
                 </div>
@@ -282,14 +316,17 @@
     </section>
 
     <!-- Our Values -->
-    <section class="py-16">
+    <section class="py-16 md:py-20">
         <div class="container mx-auto px-4 max-w-4xl">
-            <h2 class="text-4xl font-bold text-charcoal text-center mb-12">Our Values</h2>
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-4xl font-bold text-charcoal mb-4">Our Values</h2>
+                <div class="divider-gradient divider-gradient-center"></div>
+            </div>
 
-            <div class="space-y-6">
-                <div class="flex items-start">
-                    <div class="bg-forest-green text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 mt-1">
-                        ✓
+            <div class="space-y-8">
+                <div class="flex items-start scale-in delay-100">
+                    <div class="bg-gradient-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-5 flex-shrink-0 mt-1 shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-charcoal mb-2">Quality Craftsmanship</h3>
@@ -300,9 +337,9 @@
                     </div>
                 </div>
 
-                <div class="flex items-start">
-                    <div class="bg-navy-blue text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 mt-1">
-                        ✓
+                <div class="flex items-start scale-in delay-200">
+                    <div class="bg-gradient-secondary text-white rounded-full w-10 h-10 flex items-center justify-center mr-5 flex-shrink-0 mt-1 shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-charcoal mb-2">Customer Satisfaction</h3>
@@ -312,9 +349,9 @@
                     </div>
                 </div>
 
-                <div class="flex items-start">
-                    <div class="bg-crimson-red text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 mt-1">
-                        ✓
+                <div class="flex items-start scale-in delay-300">
+                    <div class="bg-gradient-accent text-white rounded-full w-10 h-10 flex items-center justify-center mr-5 flex-shrink-0 mt-1 shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-charcoal mb-2">Community Pride</h3>
@@ -325,14 +362,14 @@
                     </div>
                 </div>
 
-                <div class="flex items-start">
-                    <div class="bg-earth-green text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 mt-1">
-                        ✓
+                <div class="flex items-start scale-in delay-400">
+                    <div class="bg-gradient-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-5 flex-shrink-0 mt-1 shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-charcoal mb-2">Reliability</h3>
                         <p class="text-gray-600">
-                            When we commit to a schedule or a service, you can count on us. No excuses, no surprises—
+                            When we commit to a schedule or a service, you can count on us. No excuses, no surprises -
                             just dependable, professional service.
                         </p>
                     </div>
@@ -342,19 +379,19 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="py-16 bg-forest-green text-white">
+    <section class="py-16 md:py-20 section-green">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Ready to Experience the Difference?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in-up hero-text-shadow">Ready to Experience the Difference?</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto fade-in-up delay-100 opacity-90">
                 Join the growing number of satisfied customers throughout Suffolk County who trust
                 Above & Beyond for all their property maintenance needs.
             </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="contact.html" class="bg-crimson-red text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-red-700 transition btn-primary">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up delay-200">
+                <a href="contact.html" class="btn-accent btn-lg px-8 py-4 rounded-lg text-lg font-bold">
                     Request Free Quote
                 </a>
-                <a href="tel:6314843915" class="bg-white text-forest-green px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition btn-primary">
-                    📞 631-484-3915
+                <a href="tel:6314843915" class="bg-white text-primary px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition hover-lift shadow-lg">
+                    631-484-3915
                 </a>
             </div>
         </div>
@@ -362,36 +399,36 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-charcoal text-white py-12">
+    <footer class="footer-gradient text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <!-- Column 1: Logo and Tagline -->
-                <div>
-                    <img src="assets/images/logo.png" alt="Above & Beyond" class="h-16 mb-4">
+                <div class="fade-in-up">
+                    <img src="assets/images/logo.jpg" alt="Above & Beyond" class="h-16 mb-4">
                     <p class="text-gray-400">
                         Professional lawn care and landscaping services in Suffolk County, Long Island.
                     </p>
                 </div>
 
                 <!-- Column 2: Quick Links -->
-                <div>
+                <div class="fade-in-up delay-100">
                     <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Services</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About</a></li>
-                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition">Gallery</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Contact Info -->
-                <div>
+                <div class="fade-in-up delay-200">
                     <h3 class="text-xl font-bold mb-4">Contact Us</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li>📞 <a href="tel:6314843915" class="hover:text-white transition">631-484-3915</a></li>
-                        <li>✉️ <a href="mailto:info@aboveandbeyondny.com" class="hover:text-white transition">info@aboveandbeyondny.com</a></li>
-                        <li>📍 Suffolk County, Long Island, NY</li>
+                        <li><a href="tel:6314843915" class="footer-link">631-484-3915</a></li>
+                        <li><a href="mailto:info@aboveandbeyondny.com" class="footer-link">info@aboveandbeyondny.com</a></li>
+                        <li>Suffolk County, Long Island, NY</li>
                     </ul>
                 </div>
             </div>
@@ -404,5 +441,6 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
 </body>
 </html>

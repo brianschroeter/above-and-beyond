@@ -30,19 +30,31 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind Config for Custom Colors -->
+    <!-- Tailwind Config for Custom Colors - Fresh & Modern Theme -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
+                        // Fresh & Modern Palette
+                        'primary': '#22c55e',
+                        'primary-dark': '#16a34a',
+                        'secondary': '#0ea5e9',
+                        'accent': '#f97316',
+                        'accent-dark': '#ea580c',
+                        'surface': '#f8fafc',
+                        'charcoal': '#1f2937',
+                        'charcoal-light': '#374151',
+                        // Legacy colors (for backwards compatibility)
                         'forest-green': '#2d5016',
                         'earth-green': '#4a7729',
                         'sage-green': '#7fa855',
                         'navy-blue': '#1e3a5f',
                         'crimson-red': '#c41e3a',
                         'off-white': '#f8f7f4',
-                        'charcoal': '#2c2c2c',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
                     }
                 }
             }
@@ -105,13 +117,13 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-forest-green font-bold transition" aria-current="page">Home</a>
-                    <a href="services.html" class="text-charcoal hover:text-forest-green font-medium transition">Services</a>
-                    <a href="about.html" class="text-charcoal hover:text-forest-green font-medium transition">About</a>
-                    <a href="gallery.html" class="text-charcoal hover:text-forest-green font-medium transition">Gallery</a>
-                    <a href="contact.html" class="text-charcoal hover:text-forest-green font-medium transition">Contact</a>
-                    <a href="tel:6314843915" class="bg-crimson-red text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700 transition btn-primary">
-                        📞 631-484-3915
+                    <a href="index.html" class="nav-link text-primary font-bold transition active" aria-current="page">Home</a>
+                    <a href="services.html" class="nav-link text-charcoal hover:text-primary font-medium transition">Services</a>
+                    <a href="about.html" class="nav-link text-charcoal hover:text-primary font-medium transition">About</a>
+                    <a href="gallery.html" class="nav-link text-charcoal hover:text-primary font-medium transition">Gallery</a>
+                    <a href="contact.html" class="nav-link text-charcoal hover:text-primary font-medium transition">Contact</a>
+                    <a href="tel:6314843915" class="btn-accent">
+                        631-484-3915
                     </a>
                 </div>
 
@@ -130,13 +142,13 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3" role="navigation" aria-label="Mobile navigation">
-                <a href="index.html" class="block text-charcoal hover:text-forest-green font-medium py-2">Home</a>
-                <a href="services.html" class="block text-charcoal hover:text-forest-green font-medium py-2">Services</a>
-                <a href="about.html" class="block text-charcoal hover:text-forest-green font-medium py-2">About</a>
-                <a href="gallery.html" class="block text-charcoal hover:text-forest-green font-medium py-2">Gallery</a>
-                <a href="contact.html" class="block text-charcoal hover:text-forest-green font-medium py-2">Contact</a>
-                <a href="tel:6314843915" class="block bg-crimson-red text-white px-6 py-3 rounded-lg font-bold text-center">
-                    📞 631-484-3915
+                <a href="index.html" class="block text-primary hover:text-primary-dark font-medium py-2">Home</a>
+                <a href="services.html" class="block text-charcoal hover:text-primary font-medium py-2">Services</a>
+                <a href="about.html" class="block text-charcoal hover:text-primary font-medium py-2">About</a>
+                <a href="gallery.html" class="block text-charcoal hover:text-primary font-medium py-2">Gallery</a>
+                <a href="contact.html" class="block text-charcoal hover:text-primary font-medium py-2">Contact</a>
+                <a href="tel:6314843915" class="btn-accent block text-center">
+                    631-484-3915
                 </a>
             </div>
         </nav>
@@ -145,20 +157,20 @@
     <main id="main-content">
     <!-- Hero Section -->
     <section class="relative bg-cover bg-center h-screen" style="background-image: url('assets/images/hero-lawn.jpg'); background-color: #2d5016;">
-        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="absolute inset-0 hero-overlay-dark"></div>
         <div class="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
-            <div class="max-w-4xl">
-                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+            <div class="max-w-4xl fade-in-up">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 hero-text-shadow">
                     Professional Lawn Care & Landscaping Services
                 </h1>
-                <p class="text-xl md:text-2xl text-white mb-8">
+                <p class="text-xl md:text-2xl text-white mb-8 hero-text-shadow">
                     Family-Owned & Operated in Suffolk County, Long Island
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="contact.html" class="bg-crimson-red text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-red-700 transition btn-primary">
+                    <a href="contact.html" class="btn-accent btn-lg">
                         Get Free Quote
                     </a>
-                    <a href="tel:6314843915" class="bg-forest-green text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-earth-green transition btn-primary">
+                    <a href="tel:6314843915" class="btn-gradient btn-lg">
                         Call Now: 631-484-3915
                     </a>
                 </div>
@@ -178,80 +190,80 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service Card 1: Lawn Maintenance -->
-                <div class="bg-white rounded-lg shadow-md p-6 service-card">
-                    <div class="text-forest-green text-5xl mb-4">🏡</div>
+                <div class="bg-white rounded-lg shadow-md p-6 service-card fade-in-up delay-100">
+                    <div class="text-primary text-5xl mb-4">🏡</div>
                     <h3 class="text-2xl font-bold text-charcoal mb-3">Weekly Lawn Maintenance</h3>
                     <p class="text-gray-600 mb-4">
                         Professional mowing, edging, and trimming to keep your lawn looking pristine all season long.
                     </p>
-                    <a href="services.html#lawn-maintenance" class="text-forest-green font-semibold hover:text-earth-green transition">
+                    <a href="services.html#lawn-maintenance" class="text-primary font-semibold hover:text-primary-dark transition">
                         Learn More →
                     </a>
                 </div>
 
                 <!-- Service Card 2: Aeration -->
-                <div class="bg-white rounded-lg shadow-md p-6 service-card">
-                    <div class="text-forest-green text-5xl mb-4">🌱</div>
+                <div class="bg-white rounded-lg shadow-md p-6 service-card fade-in-up delay-200">
+                    <div class="text-primary text-5xl mb-4">🌱</div>
                     <h3 class="text-2xl font-bold text-charcoal mb-3">Thatch, Aerate, Seed & Fertilize</h3>
                     <p class="text-gray-600 mb-4">
                         Restore your lawn's health with our comprehensive treatment programs designed for Long Island properties.
                     </p>
-                    <a href="services.html#aeration" class="text-forest-green font-semibold hover:text-earth-green transition">
+                    <a href="services.html#aeration" class="text-primary font-semibold hover:text-primary-dark transition">
                         Learn More →
                     </a>
                 </div>
 
                 <!-- Service Card 3: Cleanups -->
-                <div class="bg-white rounded-lg shadow-md p-6 service-card">
-                    <div class="text-forest-green text-5xl mb-4">🍂</div>
+                <div class="bg-white rounded-lg shadow-md p-6 service-card fade-in-up delay-300">
+                    <div class="text-primary text-5xl mb-4">🍂</div>
                     <h3 class="text-2xl font-bold text-charcoal mb-3">Spring/Fall Clean Ups</h3>
                     <p class="text-gray-600 mb-4">
                         Seasonal property preparation including leaf removal, debris clearing, and garden bed maintenance.
                     </p>
-                    <a href="services.html#cleanups" class="text-forest-green font-semibold hover:text-earth-green transition">
+                    <a href="services.html#cleanups" class="text-primary font-semibold hover:text-primary-dark transition">
                         Learn More →
                     </a>
                 </div>
 
                 <!-- Service Card 4: Powerwashing -->
-                <div class="bg-white rounded-lg shadow-md p-6 service-card">
-                    <div class="text-forest-green text-5xl mb-4">💧</div>
+                <div class="bg-white rounded-lg shadow-md p-6 service-card fade-in-up delay-100">
+                    <div class="text-primary text-5xl mb-4">💧</div>
                     <h3 class="text-2xl font-bold text-charcoal mb-3">Powerwashing/Softwashing</h3>
                     <p class="text-gray-600 mb-4">
                         Professional cleaning for driveways, walkways, decks, and house exteriors. Restore your property's beauty.
                     </p>
-                    <a href="services.html#powerwashing" class="text-forest-green font-semibold hover:text-earth-green transition">
+                    <a href="services.html#powerwashing" class="text-primary font-semibold hover:text-primary-dark transition">
                         Learn More →
                     </a>
                 </div>
 
                 <!-- Service Card 5: Snow Removal -->
-                <div class="bg-white rounded-lg shadow-md p-6 service-card">
-                    <div class="text-forest-green text-5xl mb-4">❄️</div>
+                <div class="bg-white rounded-lg shadow-md p-6 service-card fade-in-up delay-200">
+                    <div class="text-primary text-5xl mb-4">❄️</div>
                     <h3 class="text-2xl font-bold text-charcoal mb-3">Snow Removal</h3>
                     <p class="text-gray-600 mb-4">
                         Reliable winter service to keep your driveway and walkways clear throughout the snowy season.
                     </p>
-                    <a href="services.html#snow-removal" class="text-forest-green font-semibold hover:text-earth-green transition">
+                    <a href="services.html#snow-removal" class="text-primary font-semibold hover:text-primary-dark transition">
                         Learn More →
                     </a>
                 </div>
 
                 <!-- Service Card 6: Christmas Lights -->
-                <div class="bg-white rounded-lg shadow-md p-6 service-card">
-                    <div class="text-forest-green text-5xl mb-4">🎄</div>
+                <div class="bg-white rounded-lg shadow-md p-6 service-card fade-in-up delay-300">
+                    <div class="text-primary text-5xl mb-4">🎄</div>
                     <h3 class="text-2xl font-bold text-charcoal mb-3">Christmas Lights Installation</h3>
                     <p class="text-gray-600 mb-4">
                         Professional holiday lighting installation and removal. Custom designs to make your home shine bright.
                     </p>
-                    <a href="services.html#christmas-lights" class="text-forest-green font-semibold hover:text-earth-green transition">
+                    <a href="services.html#christmas-lights" class="text-primary font-semibold hover:text-primary-dark transition">
                         Learn More →
                     </a>
                 </div>
             </div>
 
-            <div class="text-center mt-12">
-                <a href="services.html" class="bg-forest-green text-white px-8 py-3 rounded-lg text-lg font-bold hover:bg-earth-green transition btn-primary inline-block">
+            <div class="text-center mt-12 fade-in-up">
+                <a href="services.html" class="btn-gradient btn-lg">
                     View All Services
                 </a>
             </div>
@@ -270,8 +282,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                 <!-- Feature 1 -->
-                <div class="text-center">
-                    <div class="bg-forest-green text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                <div class="text-center scale-in delay-100">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                         👨‍👩‍👧‍👦
                     </div>
                     <h3 class="text-xl font-bold text-charcoal mb-2">Family-Owned & Operated</h3>
@@ -281,8 +293,8 @@
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="text-center">
-                    <div class="bg-navy-blue text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                <div class="text-center scale-in delay-200">
+                    <div class="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                         ⭐
                     </div>
                     <h3 class="text-xl font-bold text-charcoal mb-2">Professional Service</h3>
@@ -292,8 +304,8 @@
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="text-center">
-                    <div class="bg-crimson-red text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                <div class="text-center scale-in delay-300">
+                    <div class="bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                         📍
                     </div>
                     <h3 class="text-xl font-bold text-charcoal mb-2">Suffolk County Local</h3>
@@ -303,8 +315,8 @@
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="text-center">
-                    <div class="bg-earth-green text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                <div class="text-center scale-in delay-400">
+                    <div class="bg-primary-dark text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
                         🚀
                     </div>
                     <h3 class="text-xl font-bold text-charcoal mb-2">Above & Beyond</h3>
@@ -351,18 +363,18 @@
     </section>
 
     <!-- Final CTA Section -->
-    <section class="py-16 bg-forest-green text-white">
+    <section class="py-16 section-green">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-4">Ready for a Beautiful Property?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 fade-in-up">Ready for a Beautiful Property?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto fade-in-up delay-100">
                 Get your free, no-obligation quote today and discover why homeowners throughout Suffolk County choose Above & Beyond.
             </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="contact.html" class="bg-crimson-red text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-red-700 transition btn-primary">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up delay-200">
+                <a href="contact.html" class="btn-accent btn-lg">
                     Request Free Quote
                 </a>
-                <a href="tel:6314843915" class="bg-white text-forest-green px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition btn-primary">
-                    📞 631-484-3915
+                <a href="tel:6314843915" class="bg-white text-primary px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition hover-lift">
+                    631-484-3915
                 </a>
             </div>
         </div>
@@ -370,12 +382,12 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-charcoal text-white py-12">
+    <footer class="footer-gradient text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <!-- Column 1: Logo and Tagline -->
                 <div>
-                    <img src="assets/images/logo.png" alt="Above & Beyond" class="h-16 mb-4">
+                    <img src="assets/images/logo.jpg" alt="Above & Beyond" class="h-16 mb-4">
                     <p class="text-gray-400">
                         Professional lawn care and landscaping services in Suffolk County, Long Island.
                     </p>
@@ -385,11 +397,11 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Services</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About</a></li>
-                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition">Gallery</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
 
@@ -397,9 +409,9 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4">Contact Us</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li>📞 <a href="tel:6314843915" class="hover:text-white transition">631-484-3915</a></li>
-                        <li>✉️ <a href="mailto:info@aboveandbeyondny.com" class="hover:text-white transition">info@aboveandbeyondny.com</a></li>
-                        <li>📍 Suffolk County, Long Island, NY</li>
+                        <li><a href="tel:6314843915" class="footer-link">631-484-3915</a></li>
+                        <li><a href="mailto:info@aboveandbeyondny.com" class="footer-link">info@aboveandbeyondny.com</a></li>
+                        <li>Suffolk County, Long Island, NY</li>
                     </ul>
                 </div>
             </div>
@@ -412,5 +424,6 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
 </body>
 </html>
