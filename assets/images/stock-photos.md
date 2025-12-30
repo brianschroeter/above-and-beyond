@@ -37,6 +37,21 @@ All photos from free sources (Unsplash, Pexels, Pixabay) - no attribution requir
    - Source: Mix of Unsplash/Pexels
    - Search: Various landscaping terms
 
+## Gallery Photos Needed (8 total):
+
+Download to `assets/images/gallery/`:
+
+1. **lawn-1.jpg** - Well-maintained residential lawn
+2. **aeration-1.jpg** - Lawn aeration or healthy grass
+3. **cleanup-1.jpg** - Fall or spring cleanup scene
+4. **powerwash-1.jpg** - Powerwashed driveway or patio
+5. **snow-1.jpg** - Snow removal or cleared driveway
+6. **lights-1.jpg** - House with Christmas lights
+7. **landscape-1.jpg** - Professional landscaping work
+8. **garden-1.jpg** - Mulched garden beds
+
+All from Unsplash, Pexels, or Pixabay (free, no attribution required)
+
 ## Download Instructions:
 
 1. Visit Unsplash.com, Pexels.com, or Pixabay.com
