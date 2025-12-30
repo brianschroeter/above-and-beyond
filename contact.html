@@ -268,7 +268,13 @@
                         <h2 class="text-3xl font-bold text-charcoal mb-6">Request a Free Quote</h2>
 
                         <!-- Formspree Form -->
-                        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form" class="space-y-4">
+                        <form action="https://formspree.io/f/2903912140668665579" method="POST" id="contact-form" class="space-y-4">
+                            <!-- Formspree hidden fields -->
+                            <input type="hidden" name="_subject" value="New Quote Request from Above & Beyond Website">
+                            <input type="hidden" name="_next" value="https://www.aboveandbeyondli.com/contact.html?submitted=true">
+                            <!-- Honeypot spam protection -->
+                            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
                             <!-- Name -->
                             <div>
                                 <label for="name" class="form-label">
@@ -540,5 +546,63 @@
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/animations.js"></script>
+
+    <!-- Form submission success handling -->
+    <script>
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('submitted') === 'true') {
+                const form = document.getElementById('contact-form');
+                if (form) {
+                    // Clear form content safely
+                    while (form.firstChild) {
+                        form.removeChild(form.firstChild);
+                    }
+
+                    // Create success message container
+                    const container = document.createElement('div');
+                    container.className = 'text-center py-8';
+
+                    // Checkmark emoji
+                    const emoji = document.createElement('div');
+                    emoji.className = 'text-6xl mb-4';
+                    emoji.textContent = '✅';
+                    container.appendChild(emoji);
+
+                    // Thank you heading
+                    const heading = document.createElement('h3');
+                    heading.className = 'text-2xl font-bold text-primary mb-2';
+                    heading.textContent = 'Thank You!';
+                    container.appendChild(heading);
+
+                    // Success message
+                    const message1 = document.createElement('p');
+                    message1.className = 'text-gray-600 mb-4';
+                    message1.textContent = 'Your quote request has been submitted successfully.';
+                    container.appendChild(message1);
+
+                    // Follow-up message
+                    const message2 = document.createElement('p');
+                    message2.className = 'text-gray-600';
+                    message2.textContent = "We'll get back to you within 24 hours.";
+                    container.appendChild(message2);
+
+                    // Submit another link
+                    const link = document.createElement('a');
+                    link.href = 'contact.html';
+                    link.className = 'inline-block mt-6 btn-accent px-6 py-3 rounded-lg font-bold';
+                    link.textContent = 'Submit Another Request';
+                    container.appendChild(link);
+
+                    form.appendChild(container);
+
+                    // Scroll to form
+                    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                // Clean up URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        })();
+    </script>
 </body>
 </html>
