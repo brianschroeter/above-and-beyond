@@ -1,0 +1,15 @@
+MANUAL STEP: Create favicon.ico from logo.png using online tool like favicon.io or RealFaviconGenerator
+
+Instructions:
+1. Go to https://favicon.io/ or https://realfavicongenerator.net/
+2. Upload the logo file (assets/images/logo.png)
+3. Generate the following files:
+   - favicon.ico (place in project root)
+   - favicon-32x32.png (place in assets/images/)
+   - favicon-16x16.png (place in assets/images/)
+   - apple-touch-icon.png (place in assets/images/)
+
+4. The HTML files have already been updated with the correct favicon link tags.
+
+Note: The favicon.ico file should be placed in the root directory of the project.
+The PNG versions should be placed in the assets/images/ directory.
