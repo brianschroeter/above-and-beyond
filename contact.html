@@ -277,7 +277,7 @@
                             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
                             <!-- Name -->
-                            <div>
+                            <div class="form-group">
                                 <label for="name" class="form-label">
                                     Name <span class="text-accent">*</span>
                                 </label>
@@ -286,13 +286,17 @@
                                     id="name"
                                     name="name"
                                     required
+                                    minlength="2"
+                                    maxlength="100"
                                     class="form-input"
                                     placeholder="Your full name"
+                                    autocomplete="name"
                                 >
+                                <span class="form-error" id="name-error"></span>
                             </div>
 
                             <!-- Phone -->
-                            <div>
+                            <div class="form-group">
                                 <label for="phone" class="form-label">
                                     Phone <span class="text-accent">*</span>
                                 </label>
@@ -301,13 +305,18 @@
                                     id="phone"
                                     name="phone"
                                     required
+                                    pattern="[\d\s\-\(\)\+]+"
+                                    minlength="10"
+                                    maxlength="20"
                                     class="form-input"
                                     placeholder="631-XXX-XXXX"
+                                    autocomplete="tel"
                                 >
+                                <span class="form-error" id="phone-error"></span>
                             </div>
 
                             <!-- Email -->
-                            <div>
+                            <div class="form-group">
                                 <label for="email" class="form-label">
                                     Email <span class="text-accent">*</span>
                                 </label>
@@ -316,9 +325,12 @@
                                     id="email"
                                     name="email"
                                     required
+                                    maxlength="254"
                                     class="form-input"
                                     placeholder="your@email.com"
+                                    autocomplete="email"
                                 >
+                                <span class="form-error" id="email-error"></span>
                             </div>
 
                             <!-- Address/City -->
@@ -547,6 +559,97 @@
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/animations.js"></script>
+
+    <!-- Form Validation -->
+    <script>
+        (function() {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+
+            const validators = {
+                name: {
+                    validate: function(value) {
+                        if (!value.trim()) return 'Name is required';
+                        if (value.trim().length < 2) return 'Name must be at least 2 characters';
+                        return '';
+                    }
+                },
+                phone: {
+                    validate: function(value) {
+                        if (!value.trim()) return 'Phone number is required';
+                        const digits = value.replace(/\D/g, '');
+                        if (digits.length < 10) return 'Please enter a valid 10-digit phone number';
+                        return '';
+                    }
+                },
+                email: {
+                    validate: function(value) {
+                        if (!value.trim()) return 'Email is required';
+                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailPattern.test(value)) return 'Please enter a valid email address';
+                        return '';
+                    }
+                }
+            };
+
+            function validateField(field) {
+                const validator = validators[field.id];
+                if (!validator) return true;
+
+                const errorSpan = document.getElementById(field.id + '-error');
+                const errorMessage = validator.validate(field.value);
+
+                if (errorMessage) {
+                    field.classList.add('error');
+                    field.classList.remove('valid');
+                    if (errorSpan) errorSpan.textContent = errorMessage;
+                    return false;
+                } else {
+                    field.classList.remove('error');
+                    field.classList.add('valid');
+                    if (errorSpan) errorSpan.textContent = '';
+                    return true;
+                }
+            }
+
+            function validateForm() {
+                let isValid = true;
+                Object.keys(validators).forEach(function(fieldId) {
+                    const field = document.getElementById(fieldId);
+                    if (field && !validateField(field)) {
+                        isValid = false;
+                    }
+                });
+                return isValid;
+            }
+
+            // Real-time validation on blur
+            Object.keys(validators).forEach(function(fieldId) {
+                const field = document.getElementById(fieldId);
+                if (field) {
+                    field.addEventListener('blur', function() {
+                        validateField(this);
+                    });
+                    // Clear error on input
+                    field.addEventListener('input', function() {
+                        if (this.classList.contains('error')) {
+                            validateField(this);
+                        }
+                    });
+                }
+            });
+
+            // Validate on submit
+            form.addEventListener('submit', function(e) {
+                if (!validateForm()) {
+                    e.preventDefault();
+                    // Focus first error field
+                    const firstError = form.querySelector('.form-input.error');
+                    if (firstError) firstError.focus();
+                }
+            });
+        })();
+    </script>
 
     <!-- Form submission success handling -->
     <script>
