@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.aboveandbeyondny.com/sitemap.xml
+Sitemap: https://www.aboveandbeyondli.com/sitemap.xml
