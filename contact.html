@@ -267,13 +267,14 @@
                     <div class="glass-card p-8">
                         <h2 class="text-3xl font-bold text-charcoal mb-6">Request a Free Quote</h2>
 
-                        <!-- Formspree Form -->
-                        <form action="https://formspree.io/f/2903912140668665579" method="POST" id="contact-form" class="space-y-4">
-                            <!-- Formspree hidden fields -->
+                        <!-- FormSubmit.co Form - sends directly to email -->
+                        <form action="https://formsubmit.co/tyler@aboveandbeyondli.com" method="POST" id="contact-form" class="space-y-4">
+                            <!-- FormSubmit hidden fields -->
                             <input type="hidden" name="_subject" value="New Quote Request from Above & Beyond Website">
                             <input type="hidden" name="_next" value="https://www.aboveandbeyondli.com/contact.html?submitted=true">
+                            <input type="hidden" name="_captcha" value="false">
                             <!-- Honeypot spam protection -->
-                            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
                             <!-- Name -->
                             <div>
